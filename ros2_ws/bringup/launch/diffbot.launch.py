@@ -190,8 +190,8 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "enable_semantic_export",
             default_value="true",
-            description="Publish a throttled, compressed, map-frame-posed RGB-D bundle on /dualmap/* "
-                        "for the offboard semantic map (DualMap). Off by default.",
+            description="Publish a throttled, compressed, map-frame-posed RGB-D bundle on /semantic/* "
+                        "for the offboard semantic map backend (DualMap/OneMap). Off by default.",
         )
     )
 

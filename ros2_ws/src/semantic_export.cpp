@@ -42,12 +42,12 @@ public:
     camera_info_topic_ =
       declare_parameter<std::string>("camera_info_topic", "/camera/camera/color/camera_info");
 
-    out_color_topic_ = declare_parameter<std::string>("out_color_topic", "/dualmap/color/image_raw");
+    out_color_topic_ = declare_parameter<std::string>("out_color_topic", "/semantic/color/image_raw");
     out_depth_topic_ =
-      declare_parameter<std::string>("out_depth_topic", "/dualmap/aligned_depth/image_raw");
+      declare_parameter<std::string>("out_depth_topic", "/semantic/aligned_depth/image_raw");
     out_camera_info_topic_ =
-      declare_parameter<std::string>("out_camera_info_topic", "/dualmap/color/camera_info");
-    out_odom_topic_ = declare_parameter<std::string>("out_odom_topic", "/dualmap/odom");
+      declare_parameter<std::string>("out_camera_info_topic", "/semantic/color/camera_info");
+    out_odom_topic_ = declare_parameter<std::string>("out_odom_topic", "/semantic/odom");
 
     map_frame_ = declare_parameter<std::string>("map_frame", "map");
     camera_frame_ = declare_parameter<std::string>("camera_frame", "camera_color_optical_frame");
@@ -78,7 +78,7 @@ public:
       get_logger(),
       "semantic_export: %s + %s @ %.1f Hz -> %s/{color,aligned_depth,camera_info,odom} "
       "| pose %s->%s",
-      color_topic_.c_str(), depth_topic_.c_str(), target_rate_hz_, "/dualmap",
+      color_topic_.c_str(), depth_topic_.c_str(), target_rate_hz_, "/semantic",
       map_frame_.c_str(), camera_frame_.c_str());
   }
 
